@@ -7,13 +7,14 @@ SMS Spam Collection
 https://archive.ics.uci.edu/ml/datasets/sms+spam+collection
 
 ### Data Cleaning 
- Steps : * Dropping special Characters
-         * Converting to Small case
-         * Dropping Stopwords
-         * Stemming or Lemmatization 
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
+ * Dropping special Characters
+ * Converting to Small case
+ * Dropping Stopwords
+ * Stemming or Lemmatization
+ * Vectorization
+   * Bag of words
+   * TF-IDF
+
 
 ### Model results 
 | Sno  |     Type      | Vectorization |     Model    |  Accuracy    |
