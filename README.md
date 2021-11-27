@@ -5,7 +5,7 @@ SMS Spam Collection
 Today, internet and social media have become the fastest and easiest ways to get information. In this age, reviews, opinions, feedbacks, messages and recommendations have become significant source of information. Thanks to advancement in technologies, we are now able to extract meaningful information from such data using various Natural Language Processing (NLP) techniques. NLP , a branch of Artificial Intelligence (AI), makes use of computers and human natural language to output valuable information. NLP is commonly used in text classification task such as spam detection and sentiment analysis, text generation, language translations and document classification.
 
 ## Purpose
-Build SMS Spam Classification Model using Naive Bayes.
+Build SMS Spam Classification Model using Naive Bayes and Random forest.
 
 ## Data set
 The SMS (text) data was downloaded from UCI datasets. It contains 5,574 SMS phone messages. The data were collected for the purpose of mobile phone spam research and have already been labeled as either spam or ham.<br />
@@ -78,19 +78,30 @@ This approach to scoring is called Term Frequency – Inverse Document Frequency
 The scores are a weighting where not all words are equally as important or interesting.<br />
 
 The scores have the effect of highlighting words that are distinct (contain useful information) in a given document.
+<br /><br />
+## Naive Bayes
+
+## Random Forest
 
 ## Model results 
 | Sno  | Normalization | Vectorization |   Algortihm   |   Accuracy   | Precision | Recall | fscore |
 | ---- | ------------- | ------------- | ------------- | ------------ | --------- | ------ | ------ |
-|   1	 | Stemming	     | Bag of word	 | Naïve Bayes	 | 98.47533632  |    0.944  |  0.95  |  0.947 |
-|   2	 | Lemmatization | Bag of word	 | Naïve Bayes	 | 98.20627803  |    0.932  |  0.944 |  0.938 |
-|   3	 | Stemming	     | TF-IDF	       | Naïve Bayes	 | 96.95067265  |    1.0    |  0.788 |  0.881 |
-|   4	 | Lemmatization | TF-IDF	       | Naïve Bayes	 | 97.21973094  |    1.0    |  0.806 |  0.893 |
+|   1	 | Stemming	     | Bag of word	 | Naive Bayes	 | 98.47533632  |    0.944  |  0.95  |  0.947 |
+|   2	 | Lemmatization | Bag of word	 | Naive Bayes	 | 98.20627803  |    0.932  |  0.944 |  0.938 |
+|   3	 | Stemming	     | TF-IDF	       | Naive Bayes	 | 96.95067265  |    1.0    |  0.788 |  0.881 |
+|   4	 | Lemmatization | TF-IDF	       | Naive Bayes	 | 97.21973094  |    1.0    |  0.806 |  0.893 |
 |   5	 | Stemming	     | Bag of word	 | Random Forest | 98.11659193  |    0.993  |  0.875 |  0.93  |
 |   6	 | Lemmatization | Bag of word	 | Random Forest | 98.29596413  |    1.0    |  0.881 |  0.937 |
 |   7	 | Stemming	     | TF-IDF	       | Random Forest | 98.38565022  |    1.0    |  0.888 |  0.94  |
 |   8	 | Lemmatization | TF-IDF	       | Random Forest | 98.20627803  |    1.0    |  0.875 |  0.933 |
 
+## Precision
+
+## Recall
+
+## fscore
+
+## CONCLUSION
 
 ### References
 https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221#:~:text=Stemming%20and%20Lemmatization%20both%20generate,words%20which%20makes%20it%20faster <br />
