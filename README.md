@@ -96,4 +96,6 @@ The scores have the effect of highlighting words that are distinct (contain usef
 https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221#:~:text=Stemming%20and%20Lemmatization%20both%20generate,words%20which%20makes%20it%20faster <br />
 https://towardsdatascience.com/nlp-spam-detection-in-sms-text-data-using-deep-learning-b8632db85cc8 <br />
 https://towardsdatascience.com/build-sms-spam-classification-model-using-naive-bayes-random-forest-43465d6617ed <br />
+https://machinelearningmastery.com/gentle-introduction-bag-words-model/ <br />
+https://www.analyticsvidhya.com/blog/2020/02/quick-introduction-bag-of-words-bow-tf-idf/ <br />
  
