@@ -87,6 +87,13 @@ For example, a fruit may be considered to be an apple if it is red, round, and a
 Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.<br />
 
 ## Random Forest
+Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction.<br />
+
+The fundamental concept behind random forest is a simple but powerful one — the wisdom of crowds. In data science speak, the reason that the random forest model works so well is:<br />
+A large number of relatively uncorrelated models (trees) operating as a committee will outperform any of the individual constituent models.<br />
+The low correlation between models is the key. Just like how investments with low correlations (like stocks and bonds) come together to form a portfolio that is greater than the sum of its parts, uncorrelated models can produce ensemble predictions that are more accurate than any of the individual predictions. The reason for this wonderful effect is that the trees protect each other from their individual errors (as long as they don’t constantly all err in the same direction). While some trees may be wrong, many other trees will be right, so as a group the trees are able to move in the correct direction. So the prerequisites for random forest to perform well are:
+ * There needs to be some actual signal in our features so that models built using those features do better than random guessing.
+ * The predictions (and therefore the errors) made by the individual trees need to have low correlations with each other.
 
 ## Model results 
 | Sno  | Normalization | Vectorization |   Algortihm   |   Accuracy   | Precision | Recall | fscore |
@@ -100,13 +107,21 @@ Naive Bayes model is easy to build and particularly useful for very large data s
 |   7	 | Stemming	     | TF-IDF	       | Random Forest | 98.38565022  |    1.0    |  0.888 |  0.94  |
 |   8	 | Lemmatization | TF-IDF	       | Random Forest | 98.20627803  |    1.0    |  0.875 |  0.933 |
 
-## Precision
 
-## Recall
+#### **Accuracy** is a great measure but only when you have symmetric datasets (false negatives & false positives counts are close), also, false negatives & false positives have similar costs.<br />
+If the cost of false positives and false negatives are different then **F1** is your savior. **F1** is best if you have an uneven class distribution.<br />
+**Precision** is how sure you are of your true positives whilst recall is how sure you are that you are not missing any positives.<br />
+Choose **Recall** if the idea of false positives is far better than false negatives, in other words, if the occurrence of false negatives is unaccepted/intolerable, that you’d rather get some extra false positives(false alarms) over saving some false negatives, like in our diabetes example.<br />
+You’d rather get some healthy people labeled diabetic over leaving a diabetic person labeled healthy.<br />
+Choose **precision** if you want to be more confident of your true positives. for example, Spam emails. You’d rather have some spam emails in your inbox rather than some regular emails in your spam box. So, the email company wants to be extra sure that email Y is spam before they put it in the spam box and you never get to see it.<br />
+Choose **Specificity** if you want to cover all true negatives, meaning you don’t want any false alarms, you don’t want any false positives. for example, you’re running a drug test in which all people who test positive will immediately go to jail, you don’t want anyone drug-free going to jail. False positives here are intolerable.<br />
+<br />
+Bottom Line is
+ * Accuracy value of 90% means that 1 of every 10 labels is incorrect, and 9 is correct.
+ * Precision value of 80% means that on average, 2 of every 10 diabetic labeled student by our program is healthy, and 8 is diabetic.
+ * Recall value is 70% means that 3 of every 10 diabetic people in reality are missed by our program and 7 labeled as diabetic.
+ * Specificity value is 60% means that 4 of every 10 healthy people in reality are miss-labeled as diabetic and 6 are correctly labeled as healthy.
 
-## fscore
-
-## CONCLUSION
 
 ### References
 https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221#:~:text=Stemming%20and%20Lemmatization%20both%20generate,words%20which%20makes%20it%20faster <br />
@@ -114,4 +129,6 @@ https://towardsdatascience.com/nlp-spam-detection-in-sms-text-data-using-deep-le
 https://towardsdatascience.com/build-sms-spam-classification-model-using-naive-bayes-random-forest-43465d6617ed <br />
 https://machinelearningmastery.com/gentle-introduction-bag-words-model/ <br />
 https://www.analyticsvidhya.com/blog/2020/02/quick-introduction-bag-of-words-bow-tf-idf/ <br />
+https://towardsdatascience.com/understanding-random-forest-58381e0602d2 <br />
+https://towardsdatascience.com/accuracy-recall-precision-f-score-specificity-which-to-optimize-on-867d3f11124 <br />
  
